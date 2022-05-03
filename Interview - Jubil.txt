@@ -1,0 +1,149 @@
+Interview Questions 
+
+1. What is difference between Overloading and Overriding? 
+--> Overloading                                                     
+    1. Overloading implements compile time polymorphism. 
+    2. Overloading occurs between same classes. 
+    3. Overloading methods have same name but different parameters. 
+    4. With overloading method call is determined at compile time. 
+    5. Causes compile time error and easy to fix. 
+
+--> Overriding 
+    1. Overriding implements runtime polymorphism. 
+    2. Overriding occurs between superclass and subclass. 
+    3. Overriding methods have same signature i.e same name and method arguments. 
+    4. With overriding method call is determined at run time based on object types. 
+    5. Causes runtime error if breaks and causes serious problems 
+
+
+2. If both the functions are static, can we override? 
+--> No, we cannot override static methods because method overriding is based on dynamic binding at runtime and the static methods are bonded using static binding at compile time. So, we cannot override static methods. 
+The calling of method depends upon the type of object that calls the static method. It means: 
+--> If we call a static method by using the parent class object, the original static method will be called from the parent class. 
+--> If we call a static method by using the child class object, the static method of the child class will be called. 
+
+ 
+3. Difference between Final, Finally and Finalize? 
+--> Final 
+    1. Final is the keyword and access modifier which is used to apply restrictions on a class, method or variable. 
+    2. Final keyword is used with the classes, methods and variables. 
+    3. Once declared, final variable becomes constant and cannot be modified. Final cannot be overridden by subclasses. 
+    4. Final method is executed only when we call it. 
+
+--> Finally 
+    1. Finally is the block in Java Exception handling to execute the important code whether the exception occurs or not.  
+    2. Finally block is always related to the try and catch block in exception handling. 
+    3. finally block runs the important code even if exception occurs or not. 
+    4. Finally block is executed as soon as the try-catch block is executed. 
+
+--> Finalize 
+    1. finalize is the method in Java which is used to perform clean up processing just before object is garbage collected. 
+    2. finalize() method is used with the objects 
+    3. finalize method performs the cleaning activities with respect to the object before its destruction. 
+    4. finalize method is executed just before the object is destroyed. 
+
+
+4. What are marker interfaces?  
+--> A marker interface is an interface that has no methods or constants inside it. It provides run-time type information about objects, so the compiler and JVM have additional information about the object.  
+--> A marker interface is also called a tagging interface.  
+--> Ex. 	public interface Deletable { 
+
+} 
+
+ 
+5. What is a singleton class? 
+--> In object-oriented programming, a singleton class is a class that can have only one object (instance of class) at a time. After first time, if we try to instantiate the Singleton class, the new variable also points to the first instance created. 
+Key points to remember while defining Singleton class: 
+--> Make constructor private. 
+--> Write static method that has return type object of this singleton class. 
+
+
+6.What are the underlying data structure for arraylist and linked list? 
+--> ArrayList is a resizable array implementation in java. The backing data structure of ArrayList is an array of Object class. 
+--> Linked List underlying data structure is linear data structure.  
+
+
+7.What is hash collision? 
+--> A collision, or more specifically, a hash code collision in a HashMap, is a situation where two or more key objects produce the same final hash value and hence point to the same bucket location or array index. 
+
+
+8.What is lambda expressions? 
+--> A lambda expression is a short block of code which takes in parameters and returns a value. Lambda expressions are similar to methods, but they do not need a name and they can be implemented right in the body of a method. 
+
+
+9.What is functional interface? 
+--> A functional interface is an interface that contains only one abstract method. They can have only one functionality to exhibit. From Java 8 onwards, lambda expressions can be used to represent the instance of a functional interface. A functional interface can have any number of default methods. 
+
+
+10.What are optional classes in java 8? 
+--> Optional is a container object used to contain not-null objects. Optional object is used to represent null with absent value. This class has various utility methods to facilitate code to handle values as 'available' or 'not available' instead of checking null values. 
+
+
+11. What is factory design pattern and Adapter and difference between them?
+--> The Factory Design Pattern or Factory Method Design Pattern is one of the most used design patterns in Java. According to GoF, this pattern “defines an interface for creating an object, but let subclasses decide which class to instantiate. The Factory method lets a class defer instantiation to subclasses”.
+--> Adapter is a structural design pattern, which allows incompatible objects to collaborate. The Adapter acts as a wrapper between two objects. It catches calls for one object and transforms them to format and interface recognizable by the second object.
+
+
+12. What are solid principles?
+--> SOLID principles are object-oriented design concepts relevant to software development. SOLID is an acronym for five other class-design principles: Single Responsibility Principle, Open-Closed Principle, Liskov Substitution Principle, Interface Segregation Principle, and Dependency Inversion Principle.
+
+
+13.What does @Component and @Scan do in Springboot annotation?
+--> @Component = It is a class-level annotation that turns the class into Spring bean at the auto-scan time.
+--> @Scan = It is used to specify packages to locate components in Spring. This is automatically done in the default package, in the case of Spring Boot.
+
+
+14. What is the difference between JPA, Hibernate and ORM?
+--> ORM: Object Relational Mapping is concept/process of converting the data from Object oriented language to relational DB and vice versa.   For example in java its done with the help of reflection and jdbc.
+--> Hibernate: Its the implementation of above concept.
+--> JPA: Its the one step above ORM. Its high level API and specification so that different ORM tools can implement so that it provides the flexibility to developer to change the implementation from one ORM to another (for example if application uses the JPA api and implementation is hibernate. In future it can switch to IBatis if required. But on the other if application directly lock the implementation with Hibernate without JPA platform, switching is going to be herculean task)
+
+
+15. What is indexing in database?
+--> Indexing is a way to optimize the performance of a database by minimizing the number of disk accesses required when a query is processed. It is a data structure technique which is used to quickly locate and access the data in a database. Indexes are created using a few database columns.
+
+
+16.What are four types of drivers in JDBC?
+--> Four types of drivers in JDBC are:
+     Type 1: JDBC-ODBC bridge
+     Type 2: partial Java driver
+     Type 3: pure Java driver for database middleware
+     Type 4: pure Java driver for direct-to-database
+
+
+17.What is difference between @component and @bean and @service?
+--> 1.It is used to explicitly declare a single bean, rather than letting Spring do it automatically.
+    2.If any class is annotated with @Component it will be automatically detect by using classpath scan.
+    3.We should use @bean, if you want specific implementation based on dynamic condition.
+    4.The @Service is child of component and used to denote classes from the service layer of the application.
+    5.@Component is a generic stereotype for any Spring-managed component. @Service annotates classes at the service layer.
+    6.@bean annotates classes at the persistence layer, which will act as a database repository.
+
+
+18.What is difference between SOAP and restful services technically?
+--> 1.SOAP stands for Simple Object Access Protocol whereas REST stands for Representational State Transfer.
+    2.SOAP is a protocol whereas REST is an architectural pattern.
+    3.SOAP uses service interfaces to expose its functionality to client applications while REST uses Uniform Service locators 
+      to access to the components on the hardware device.
+    4.SOAP needs more bandwidth for its usage whereas REST doesn’t need much bandwidth.
+    5.Comparing SOAP vs REST API, SOAP only works with XML formats whereas REST work with plain text, XML, HTML and JSON.
+    6.SOAP cannot make use of REST whereas REST can make use of SOAP.
+
+
+19. Difference in POST and PUT?
+--> POST
+    1. This method is not idempotent.
+    2. POST method is call when you have to add a child resource under resources collection.
+    3. If you send the same POST request more than one time, you will receive different results.
+    4. POST work as abstract.
+
+--> PUT
+    1. This method is idempotent.
+    2. PUT method is call when you have to modify a single resource, which is already a part of resource collection.
+    3. If you send the same request multiple times, the result will remain the same.
+    4. PUT works as specific.
+
+
+20. Is react uni-directional or bi-directional?
+--> React, a Javascript library, uses unidirectional data flow.
+--> React doesn't support bi-directional binding to make sure you are following a clean data flow architecture. The major benefit of this approach is that data flows throughout your app in a single direction, giving you better control over it.
